@@ -2,8 +2,6 @@
 
 My node.js starter-kit with [babel.js](http://babeljs.io)
 
-
-
 #### Setup
 
 Run this command in console to install project.
@@ -12,27 +10,19 @@ Run this command in console to install project.
 git clone git@github.com:kulakowka/babel-starter-kit.git && cd babel-starter-kit && npm install
 ```
 
-#### Development
+Start script `npm start` use [require hook](https://babeljs.io/docs/usage/require/):
 
-In development mode uses a command line utility `babel-node` to transform es6-code to es5-code on the fly.
-
+#### package.json
 ```
-npm start
-```
-
-#### Build
-
-For build project uses a command line utility `babel` to transform es6-code to es5-code and copy files from  `./src` to `./build` folder.
-
-```
-npm run build
+"scripts": {
+    "start": "node -r babel-register index.js"
+}
 ```
 
-#### Production
+#### .babelrc
 
+```js
+{
+  "presets": ["es2015"]
+}
 ```
-npm run production
-```
-
-Run this command in console to build and start project in production mode.
-
