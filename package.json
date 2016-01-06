@@ -4,7 +4,7 @@
   "description": "My node.js starter-kit with babel.js",
   "main": "index.js",
   "scripts": {
-    "build": "./node_modules/.bin/babel src --out-dir build",
+    "build": "rm -rf build && ./node_modules/.bin/babel src -d build -D",
     "start": "./node_modules/.bin/babel-node src",
     "production": "npm run build && NODE_ENV=production node build",
     "test": "echo \"Error: no test specified\" && exit 1"
